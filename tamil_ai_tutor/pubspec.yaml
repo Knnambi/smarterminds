@@ -1,0 +1,33 @@
+name: tamil_ai_tutor
+description: A free AI tutor for Tamil Nadu State Board students, powered by Gemini.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # AI — Gemini long-context
+  google_generative_ai: ^0.4.3
+
+  # Text-to-Speech (Tamil voice output)
+  flutter_tts: ^4.0.2
+
+  # Speech-to-Text (Tamil voice input)
+  speech_to_text: ^6.6.2
+
+  # Runtime permission management
+  permission_handler: ^11.3.1
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
