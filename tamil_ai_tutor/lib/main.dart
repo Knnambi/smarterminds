@@ -11,7 +11,7 @@ import 'package:speech_to_text/speech_to_text.dart';
 // 🔑  PASTE YOUR GEMINI API KEY HERE
 // Get one free at: https://aistudio.google.com/app/apikey
 // ─────────────────────────────────────────────────────────────────────────────
-const String GEMINI_API_KEY = "YOUR_API_KEY_HERE";
+const String GEMINI_API_KEY = "AIzaSyB_cHKAVSip65ZuJY0raWBAVxnhMGtzKOM";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // System instruction — keeps Gemini focused on the Tamil Nadu syllabus
