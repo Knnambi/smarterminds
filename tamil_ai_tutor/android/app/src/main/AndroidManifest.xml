@@ -10,6 +10,12 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
+    <!-- File picker — read storage for Android ≤ 12 (API 32) -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <!-- Android 13+ (API 33) uses granular media permissions; no broad storage needed -->
+
     <application
         android:label="Tamil AI Tutor"
         android:name="${applicationName}"
