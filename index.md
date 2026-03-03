@@ -1,37 +1,65 @@
-## Welcome to GitHub Pages
+# Tamil AI Tutor
 
-You can use the [editor on GitHub](https://github.com/Knnambi/smarterminds/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+**தமிழ்நாடு மாநில பாட வாரிய AI ஆசிரியர்**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+A free AI-powered tutor for Tamil Nadu State Board students, built with Flutter and Google Gemini.
 
-### Markdown
+---
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## What it does
 
-```markdown
-Syntax highlighted code block
+- Teachers upload the official **Tamil Nadu State Board syllabus PDF**
+- Students ask questions in **Tamil** — by typing or speaking
+- Gemini reads the PDF and answers **strictly from the syllabus**
+- Responses are read aloud in **Tamil voice**
 
-# Header 1
-## Header 2
-### Header 3
+## Features
 
-- Bulleted
-- List
+| Feature | Details |
+|---|---|
+| AI Model | Gemini 1.5 Flash (long-context PDF reading) |
+| Language | Tamil (தமிழ்) |
+| Voice input | Speech-to-Text via microphone |
+| Voice output | Text-to-Speech in Tamil |
+| Platform | Android + Web |
 
-1. Numbered
-2. List
+## Run it
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+**Android (local):**
+```bash
+cd tamil_ai_tutor
+flutter run --dart-define=GEMINI_API_KEY=YOUR_KEY
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+**Web (local):**
+```bash
+cd tamil_ai_tutor
+flutter run -d chrome --dart-define=GEMINI_API_KEY=YOUR_KEY
+```
 
-### Jekyll Themes
+**Deploy to GitHub Pages:**
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Knnambi/smarterminds/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+1. Go to **Settings → Secrets → Actions** in this repo
+2. Add a secret named `GEMINI_API_KEY` with your Gemini API key
+3. Push to `master` — GitHub Actions will build and deploy automatically
+4. The live app will appear at `https://knnambi.github.io/smarterminds/`
 
-### Support or Contact
+## Project structure
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
+tamil_ai_tutor/
+  lib/
+    main.dart                      ← App entry point
+    constants.dart                 ← API key + AI prompts
+    models/
+      chat_message.dart            ← Data model
+    screens/
+      syllabus_loader_screen.dart  ← PDF upload screen
+      chat_screen.dart             ← Chat + voice screen
+    widgets/
+      bouncing_dot.dart            ← Typing indicator dot
+```
+
+---
+
+*Powered by [Google Gemini](https://ai.google.dev/) · Built with [Flutter](https://flutter.dev/)*
